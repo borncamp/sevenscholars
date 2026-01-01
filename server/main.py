@@ -92,7 +92,7 @@ async def _ask_single(
             client.chat.completions.create(
                 model="gpt-4o-mini",
                 messages=messages,
-                max_tokens=350,
+                max_tokens=600,
                 temperature=0.7,
             ),
             timeout=timeout,
