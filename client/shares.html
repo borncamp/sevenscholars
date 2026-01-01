@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seven Scholars Answers — Shares</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="shell">
+      <div class="brand">
+        <div class="logo">△</div>
+        <div>
+          <p class="eyebrow">Seven Scholars Answers</p>
+          <h1>Saved Links</h1>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="nav-btn" href="/">Ask</a>
+        <a class="nav-btn" href="/settings">Settings</a>
+      </nav>
+    </header>
+    <main class="shell">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Shares</p>
+            <h2>Recent saved Q&A</h2>
+          </div>
+          <div class="status" id="share-count">Loading...</div>
+        </div>
+        <div class="answers" id="share-list"></div>
+        <p class="hint" id="share-hint"></p>
+      </section>
+    </main>
+    <script src="/static/shares.js" type="module"></script>
+  </body>
+</html>

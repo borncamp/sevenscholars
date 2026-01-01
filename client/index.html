@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seven Scholars Answers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="sending-banner"></div>
+    <div class="sending-overlay" id="sending-overlay">
+      <div class="spinner"></div>
+      <div class="sending-copy" id="sending-text">Preparing...</div>
+    </div>
+    <header class="shell">
+      <div class="brand">
+        <div class="logo">△</div>
+        <div>
+          <p class="eyebrow">Conversational Lab</p>
+              <h1>Seven Scholars Answers</h1>
+            </div>
+          </div>
+      <nav class="nav">
+        <button class="nav-btn" data-view="ask" id="ask-tab">Ask</button>
+        <button class="nav-btn" data-view="settings" id="settings-tab">Settings</button>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <section class="panel" id="ask-view">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Prompt</p>
+            <h2>Pose a question</h2>
+          </div>
+          <div class="status" id="api-status">API key: unknown</div>
+        </div>
+        <form id="question-form" class="stack">
+          <div class="field">
+            <span>Select up to 7 scholars</span>
+            <div class="pill-group" id="traditions"></div>
+            <p class="hint" id="selection-hint">Choose who should answer.</p>
+          </div>
+          <label class="field">
+            <span>Your question</span>
+            <textarea
+              id="question-input"
+              rows="4"
+              placeholder="Ask something that benefits from varied spiritual perspectives."
+              required
+            ></textarea>
+          </label>
+          <div class="actions">
+            <button type="submit" class="primary">Send to scholars</button>
+            <p class="hint" id="ask-hint">Waiting to ask...</p>
+          </div>
+        </form>
+
+        <div class="answers" id="answers"></div>
+        <div class="share-row hidden" id="share-row">
+          <input type="text" id="share-link" readonly />
+          <button type="button" class="secondary" id="copy-share">Copy link</button>
+          <p class="hint" id="share-hint">This link replays these answers without a new call.</p>
+        </div>
+      </section>
+
+      <section class="panel hidden" id="settings-view">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Setup</p>
+            <h2>API key</h2>
+          </div>
+        </div>
+        <p class="body">
+          We call OpenAI's Chat Completions API. Create a key at
+          <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">platform.openai.com/api-keys</a>
+          and paste it here. Keys stay in the app's SQLite database on the server—no env files.
+        </p>
+        <form id="settings-form" class="stack">
+          <label class="field">
+            <span>OpenAI API key</span>
+            <input id="api-key" type="password" placeholder="sk-..." required />
+          </label>
+          <div class="actions">
+            <button type="submit" class="primary">Save key</button>
+            <span class="hint" id="settings-hint">Not saved yet.</span>
+          </div>
+        </form>
+        <div class="note">
+          <p>How billing works</p>
+          <ol>
+            <li>Sign in to OpenAI.</li>
+            <li>Create a secret key (starts with <code>sk-</code>).</li>
+            <li>Ensure your account has billing enabled or sufficient free credits.</li>
+            <li>Replace the key here if you rotate or revoke it.</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js" type="module"></script>
+  </body>
+</html>
